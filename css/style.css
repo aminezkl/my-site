@@ -190,9 +190,9 @@ p {
 }
 
 
-
-/***************************************/
-/***************************************/
+/****************************************************************
+        bouton WhatsApp
+****************************************************************/
 
 .buttonVertColor {
 	color: #25d366;
@@ -211,19 +211,9 @@ p {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /***************************************/
 /* Pour les appareils mobiles jusqu'à une largeur de 767px */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 767px) {
     body {
         flex-direction: column;
         align-items: center;
@@ -293,16 +283,13 @@ p {
 		height: 50px;
 
 	}
+	/* Formulaire d'inscription */
+	
+
+
+
 
 }
-
-
-
-
-
-
-
-
 /****************************************************************
         Formulaire d'inscription
 ****************************************************************/
@@ -329,9 +316,10 @@ form td[colspan] {
 }
 
 form td[colspan] label {
-    text-align: left;
+    text-align: center;
     display: block;
-    margin: 10px 10px 10px 160px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 
@@ -350,30 +338,15 @@ form input[type=submit], form input[type=reset] {
 }
 
 input[type=submit]:hover, input[type=reset]:hover {
-    background: red;
+    background:  var(--main-color);
     color: white;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* #address {
-	width: 300px;
-	padding: 8px;
-	font-size: 16px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-} */
+/****************************************************************
+        list adress
+****************************************************************/
 
 #departureSuggestions ,#arrivalSuggestions {
 	list-style: none;
@@ -381,14 +354,31 @@ input[type=submit]:hover, input[type=reset]:hover {
 	margin: 0;
 }
 
-/* .suggestion-item {
-	padding: 8px;
-	cursor: pointer;
-} */
-
 .suggestion-item:hover {
 	background-color: #f0f0f0;
 }
+
+
+
+
+
+/* .reservationForm table {
+    border-collapse: collapse; 
+    width: 100%; 
+    border: 2px solid black; 
+}
+
+.reservationForm th, 
+.reservationForm td {
+    border: 1px solid black; 
+    padding: 8px;
+    text-align: left; 
+}
+
+.reservationForm th {
+    background-color: #f2f2f2; 
+} */
+
 
 
 
