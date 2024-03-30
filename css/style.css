@@ -283,19 +283,18 @@ p {
 		height: 50px;
 
 	}
-	/* Formulaire d'inscription */
 	
-
-
-
 
 }
 /****************************************************************
         Formulaire d'inscription
 ****************************************************************/
+form tr td {
+	font-size: 12px;
 
-form input[type=text], form input[type=email], form input[type=password] {
-    width: 250px;
+}
+form input[type=text], form input[type=email], form input[type=password],form input[type=tel] {
+    width: 60%;
 }
 
 form table {
@@ -362,22 +361,6 @@ input[type=submit]:hover, input[type=reset]:hover {
 
 
 
-/* .reservationForm table {
-    border-collapse: collapse; 
-    width: 100%; 
-    border: 2px solid black; 
-}
-
-.reservationForm th, 
-.reservationForm td {
-    border: 1px solid black; 
-    padding: 8px;
-    text-align: left; 
-}
-
-.reservationForm th {
-    background-color: #f2f2f2; 
-} */
 
 
 
