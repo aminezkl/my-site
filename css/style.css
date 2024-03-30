@@ -294,7 +294,8 @@ form tr td {
 
 }
 form input[type=text], form input[type=email], form input[type=password],form input[type=tel] {
-    width: 60%;
+    width: 90%;
+	max-width: 200px;
 }
 
 form table {
@@ -303,7 +304,7 @@ form table {
 
 form table td {
     padding: 7px;
-    width: 350px;
+    width: 800px;
 }
 
 form td:first-child:not(:only-child) {
