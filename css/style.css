@@ -163,6 +163,8 @@ p {
 	justify-content: center;
 
 	text-decoration: none;
+
+	width: 350px;
 }
 
 .buttonDrakGreyColor {
@@ -189,6 +191,12 @@ p {
 	border-width: 3px;
 }
 
+.buttonHeader {
+	background-color: transparent;
+	color: white;
+	border-color: white;
+}
+
 
 /****************************************************************
         bouton WhatsApp
@@ -197,6 +205,11 @@ p {
 .buttonVertColor {
 	color: #25d366;
 	border-color:  #25d366;
+}
+
+.buttonBlueColor {
+	color: #0080FF;
+	border-color:  #0080FF;
 }
 
 .sectionBienvenue {
