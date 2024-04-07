@@ -107,6 +107,11 @@ p {
 	color: var(--drak-grey-color);
 }
 
+footer {
+	display: flex;
+	justify-content: center;
+}
+
 
 /***************/
 .directionRow {
@@ -249,12 +254,10 @@ p {
     article {
         width: 90%; /* Ajuster la largeur de l'article pour les appareils mobiles */
     }
-
-    .imagesEquipee {
-        width: 100%; /* Ajuster la largeur de l'image pour les appareils mobiles */
-        height: auto; /* Garder le ratio de l'image */
-        border-radius: 0; /* Supprimer la bordure arrondie pour les appareils mobiles */
-    }
+	footer p {
+		font-size: 10px;
+		
+	}
 
     .button {
         padding: 15px 30px; /* Ajuster le rembourrage du bouton pour les appareils mobiles */
@@ -303,7 +306,7 @@ p {
         Formulaire d'inscription
 ****************************************************************/
 form tr td {
-	font-size: 12px;
+	font-size: 16px;
 
 }
 form input[type=text], form input[type=email], form input[type=password],form input[type=tel] {
@@ -370,6 +373,30 @@ input[type=submit]:hover, input[type=reset]:hover {
 .suggestion-item:hover {
 	background-color: #f0f0f0;
 }
+
+
+
+.logoavisgoogle {
+	margin: 20px;
+	margin-bottom: 36px;
+	width: 200px;
+}
+.sectionfooter {
+	width: 75%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+
+	align-items: center;
+	justify-content: center;
+
+}
+
+.section-logo {
+	padding-top: 60px;
+	padding-bottom: 0px;
+}
+
+
 
 
 
