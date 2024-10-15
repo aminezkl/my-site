@@ -1551,6 +1551,24 @@ screen and (max-width:39.99875em) {
     flex-direction: column;
 }
 
+header {
+    background-color:var(--header-color);
+}
+
+header p {
+    color: white; /* Couleur du texte */
+    font-size: 24px; /* Taille de la police plus grande */
+    font-weight: bold; /* Gras */
+    text-align: center; /* Centrer le texte */
+    text-transform: uppercase; /* Mettre en majuscules */
+  
+    padding: 15px; /* Espacement intérieur */
+   
+   
+  
+}
+
+
 
     
    
