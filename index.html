@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>VTC Besançon : Réservez un chauffeur  </title>
+    <title>VTC Besançon : Réservez un chauffeur </title>
     <link rel="icon" href="images/logo/wheel_8002505.png" type="image/jpeg">
     <meta name="description"
         content="Chauffeur disponible à Besançon, Proposant des services de VTC.
@@ -11,7 +11,7 @@
     <meta name="keywords"
         content="vtc Besançon, chauffeur VTC Besançon, vtc gare Besançon, services de vtc, chauffeur privé, VTC, transport privé, transfert gare">
 
-        
+
     <script src="https://kit.fontawesome.com/d7a21fe5b8.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8" />
     <link rel='stylesheet' id='vo.stylesheet-css' href='style.css' type='text/css'>
@@ -19,8 +19,8 @@
 
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
-      <!-- Balisage JSON-LD pour résultats enrichis -->
-  <script type="application/ld+json">
+    <!-- Balisage JSON-LD pour résultats enrichis -->
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -38,7 +38,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
-        "reviewCount": "25"
+        "reviewCount": "141"
       }
     }
     </script>
@@ -112,7 +112,7 @@
 
                                             <label class="label">
                                                 <input class="text-center" type="date" id="date" name="naissance"
-                                                    value="2024-01-01" required>
+                                                    required>
                                             </label>
 
                                             <div class="taxi2airport__dateTime__divider">
@@ -177,7 +177,11 @@
                                     // Récupérer les valeurs des champs input
                                     var departureAddress = document.getElementById('departureAddress').value.trim();
                                     var arrivalAddress = document.getElementById('arrivalAddress').value.trim();
-                                    var date = document.getElementById('date').value.trim();
+
+                                    var date1 = document.getElementById('date').value.trim(); // Récupère la date au format 'YYYY-MM-DD'
+                                    var dateParts = date1.split('-'); // Découpe la date en parties [année, mois, jour]
+                                    var date = dateParts[2] + '-' + dateParts[1] + '-' + dateParts[0]; // Réorganise en format 'DD-MM-YYYY'
+
                                     var heure = document.getElementById('heure').value.trim();
                                     var Nbpassage = document.getElementById('Nbpassage').value.trim();
                                     var Nbbagage = document.getElementById('Nbbagage').value.trim();
@@ -201,6 +205,10 @@
                                         "Passagers: " + Nbpassage + "%0A" +
                                         "Bagages: " + Nbbagage;
 
+
+                                          
+                                        alert("Vous allez être redirigé vers l'application pour envoyer votre demande. Nous confirmerons votre réservation par un appel ou un message de retour.");
+
                                     // Redirection en fonction du type de bouton
                                     if (buttonType === 'whatsapp') {
 
@@ -212,6 +220,7 @@
                                     } else if (buttonType === 'sms') {
                                         window.location.href = "sms:+33781180897?&body=" + message;
                                     }
+                                  
                                 }
 
 
@@ -621,7 +630,7 @@
                 </div>
 
                 <div class="cell airport-item">
-                    <a  href="taxi-besancon.html" class="airport-item__anchor">
+                    <a href="taxi-besancon.html" class="airport-item__anchor">
                         <span class="sr-only">Mimoun El Aouaj Taxi</span>
                     </a>
                     <div class="airport-item__image">
@@ -770,7 +779,8 @@
             Body: message1
         }).then(function (response) {
             console.log('E-mail envoyé avec succès!', response.status, response.text);
-            alert('Votre message a été envoyé avec succès!');
+            alert("Votre message a été envoyé avec succès ! Nous confirmerons votre réservation par appel ou par message.");
+
             document.getElementById('contact-form').reset(); // Réinitialiser le formulaire après l'envoi
         }, function (error) {
             console.log('Echec de l\'envoi de l\'e-mail :', error);

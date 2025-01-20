@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="fr-FR">
+
+<head>
+
+    <title>VTC Besançon : Réservez un chauffeur </title>
+    <link rel="icon" href="images/logo/wheel_8002505.png" type="image/jpeg">
+    <meta name="description"
+        content="Chauffeur disponible à Besançon, Proposant des services de VTC.
+        Notre équipe de chauffeurs professionnels est à votre disposition jour et nuit pour répondre à tous vos besoins de transport à Besançon et dans les environs. Que ce soit pour un déplacement privé ou un rendez-vous professionnel, nous vous garantissons confort, fiabilité et ponctualité. Réservez dès maintenant !">
+    <meta name="keywords"
+        content="vtc Besançon, chauffeur VTC Besançon, vtc gare Besançon, services de vtc, chauffeur privé, VTC, transport privé, transfert gare">
+
+
+    <script src="https://kit.fontawesome.com/d7a21fe5b8.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <link rel='stylesheet' id='vo.stylesheet-css' href='style.css' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+
+
+
+
+
+</head>
+
+<body class="home">
+
+    <header>
+        <p>ADMIN</p>
+    </header>
+
+    <main id="main-content" class="site-content">
+        <div class="hero">
+            <div class="hero__image">
+
+                <h1 class="hero__title">Préparez votre texte de réservation</h1>
+
+
+
+            </div>
+
+            <div class="hero__content">
+
+                <div class="div_from">
+                    <form id="contact-form" class="form_reservation" onsubmit="copyText(); return false;">
+                        <div class="div_lieu">
+
+                            <div class="label"><span class="label__title">De</span>
+                                <div class="form__inputContainer">
+                                    <input class="input_adresse input_logo" type="text" id="departureAddress"
+                                        name="departureAddress" placeholder="Aéroport, adresse, gare, port"
+                                        autocomplete="off" required>
+                                    <div class="div_select">
+                                        <div id="departureSuggestions" class="div_select_wrapper">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="bouton_permutation" id="switchButton"><span
+                                    class="sr-only">Inverser les adresses</span>
+                                <i class="fa-solid fa-repeat" style="color: #5e6d7c;"></i>
+                            </button>
+
+                            <div class="label"><span class="label__title">À</span>
+                                <div class="form__inputContainer">
+                                    <input class="input_adresse input_logo" type="text" id="arrivalAddress"
+                                        name="arrivalAddress" placeholder="Aéroport, adresse, gare, port"
+                                        autocomplete="off" required>
+
+                                    <div class="div_select">
+                                        <div id="arrivalSuggestions" class="div_select_wrapper">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="div_option">
+                            <div class="div_groupe">
+                                <div class="label">
+                                    <div class="div_date_heure label">
+                                        <span class="label__title">Date et heure de prise en charge</span>
+                                        <div class="sous_div">
+
+                                            <label class="label">
+                                                <input class="text-center" type="date" id="date" name="naissance"
+                                                    required>
+                                            </label>
+
+                                            <div class="taxi2airport__dateTime__divider">
+                                                <div class="taxi2airport__dateTime__line"></div>
+                                            </div>
+
+                                            <label class="label">
+                                                <input class="text-center" type="time" id="heure" name="heure" required>
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="div_groupe">
+                                <div class="label"><span class="label__title">Passagers</span>
+
+
+                                    <input type="number" id="Nbpassage"
+                                        class="input_style input_style_passenger text-center" value="1" placeholder="1"
+                                        max="20" min="0">
+
+
+                                </div>
+                                <div class="label"><span class="label__title">Bagage</span>
+                                    <input type="number" id="Nbbagage"
+                                        class="input_style input_style_bagage text-center" value="1" placeholder="1"
+                                        max="20" min="0">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="label"><span class="label__title" style="opacity: 0;">Copie le text</span>
+                            <button class="bouton bouton_recherche" type="submit" name="btnInscription">
+                                <span>Copie le text</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+
+
+
+
+
+                    </form>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+
+    </main>
+
+
+
+</body>
+
+</html>
+
+<!-- switchLocations -->
+<script>
+    function switchLocations() {
+        var departureAddress = document.getElementById("departureAddress").value;
+        var arrivalAddress = document.getElementById("arrivalAddress").value;
+
+        document.getElementById("departureAddress").value = arrivalAddress;
+        document.getElementById("arrivalAddress").value = departureAddress;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var switchButton = document.getElementById('switchButton');
+        switchButton.addEventListener('click', switchLocations);
+    });
+</script>
+
+
+
+
+<!-- envoie de mail formulaire devis -->
+<script src="https://smtpjs.com/v3/smtp.js"> </script>
+<script>
+
+    function copyText() {
+
+        var date1 = document.getElementById('date').value.trim(); // Récupère la date au format 'YYYY-MM-DD'
+        var dateParts = date1.split('-'); // Découpe la date en parties [année, mois, jour]
+        var date = dateParts[2] + '-' + dateParts[1] + '-' + dateParts[0]; // Réorganise en format 'DD-MM-YYYY'
+
+
+        var message1 = 'Départ : ' + document.getElementById('departureAddress').value + '\n' +
+            'D\'Arrivée : ' + document.getElementById('arrivalAddress').value + '\n\n' +
+            'Date : ' + date + '\n' +
+            'Heure : ' + document.getElementById('heure').value + '\n\n' +
+            'Passagers : ' + document.getElementById('Nbpassage').value + '\n' +
+            'Bagages : ' + document.getElementById('Nbbagage').value + '\n';
+
+        // Créer un élément textarea invisible pour copier le texte
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = message1;
+
+        // Ajout temporaire de l'élément dans le DOM
+        document.body.appendChild(tempTextArea);
+
+        // Sélectionner le texte dans le textarea
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999); // Pour mobile
+
+        // Copier le texte dans le presse-papiers
+        document.execCommand('copy');
+
+        // Supprimer l'élément textarea après la copie
+        document.body.removeChild(tempTextArea);
+
+        // Alerte pour confirmer la copie
+        alert("Texte copié : \n" + message1);
+    }
+
+
+
+
+</script>
+
+
+<!-- adress auto database -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const departureAddressInput = document.getElementById('departureAddress');
+        const departureSuggestionsList = document.getElementById('departureSuggestions');
+        const arrivalAddressInput = document.getElementById('arrivalAddress');
+        const arrivalSuggestionsList = document.getElementById('arrivalSuggestions');
+
+        // Liste statique de suggestions (utilisée pour les deux champs)
+        const commonSuggestions = [
+            "Gare Viotte, 25000 Besançon",
+            "Gare Besançon Franche-Comté TGV, 25870 Auxon",
+            "CHU Jean Minjoz, 3 Bd Alexandre Fleming, 25000 Besançon",
+            "Clinique Saint Vincent, 40 Chem. des Tilleroyes, 25000 Besançon",
+            "Polyclinique de Franche-Comté, 4 Rue Auguste Rodin, 25000 Besançon",
+
+            "ibis budget Besançon Centre Gare, 5 Av. du Maréchal Foch, 25000 Besançon",
+            "Hotel Ibis Besançon La City, 1 Av. Louise Michel, 25000 Besançon",
+            "Hotel ibis Besançon Centre Ville, 21 Rue Gambetta, 25000 Besançon",
+            "Hotel Ibis Styles Besançon, 22 Bis Rue de Trey, 25000 Besançon",
+            "Hotel ibis budget Besancon Nord, 1 Rue de la Poste, 25480 Besançon",
+
+            "Hotel Mercure Besançon Parc Micaud, 3 Av. Edouard Droz, 25000 Besançon",
+            "Hotel Le Sauvage Besançon, 6 Rue du Chapitre, 25000 Besançon",
+            "Hotel Best Western Citadelle, 13 Rue du Général Lecourbe, 25000 Besançon",
+            "Hotel Du Nord, 8 Rue Moncey, 25000 Besançon",
+        ];
+
+        // Fonction pour afficher les suggestions à partir d'un tableau statique
+        function showSuggestions(inputText, suggestionsList, suggestionsArray, inputElement) {
+            suggestionsList.innerHTML = ''; // Réinitialise les suggestions
+            if (inputText.length >= 3) { // Affiche les suggestions si 3 caractères ou plus
+                const filteredSuggestions = suggestionsArray.filter(suggestion =>
+                    suggestion.toLowerCase().includes(inputText.toLowerCase())
+                );
+
+                filteredSuggestions.forEach(suggestion => {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.classList.add('suggestion-item');
+                    suggestionItem.textContent = suggestion;
+                    suggestionItem.addEventListener('click', function () {
+                        inputElement.value = suggestion;
+                        suggestionsList.style.display = 'none'; // Masquer la liste après sélection
+                    });
+                    suggestionsList.appendChild(suggestionItem);
+                });
+
+                suggestionsList.style.display = 'block'; // Afficher la liste des suggestions
+            } else {
+                suggestionsList.style.display = 'none'; // Masquer la liste si moins de 3 caractères
+            }
+        }
+
+        // Écouter les changements dans le champ "Départ"
+        departureAddressInput.addEventListener('input', function () {
+            const inputText = departureAddressInput.value.trim();
+            showSuggestions(inputText, departureSuggestionsList, commonSuggestions, departureAddressInput);
+        });
+
+        // Écouter les changements dans le champ "Arrivée"
+        arrivalAddressInput.addEventListener('input', function () {
+            const inputText = arrivalAddressInput.value.trim();
+            showSuggestions(inputText, arrivalSuggestionsList, commonSuggestions, arrivalAddressInput);
+        });
+
+        // Cacher les suggestions si l'utilisateur clique en dehors du champ ou de la liste
+        document.addEventListener('click', function (event) {
+            const isClickInsideDeparture = departureAddressInput.contains(event.target) || departureSuggestionsList.contains(event.target);
+            const isClickInsideArrival = arrivalAddressInput.contains(event.target) || arrivalSuggestionsList.contains(event.target);
+
+            if (!isClickInsideDeparture) {
+                departureSuggestionsList.style.display = 'none';
+            }
+            if (!isClickInsideArrival) {
+                arrivalSuggestionsList.style.display = 'none';
+            }
+        });
+
+    });
+</script>
+
+
+
+
+<!-- date aujourdui et interdir les date du passé -->
+<script>
+    // Obtenez la date actuelle
+    var today = new Date();
+
+    // Formattez la date en YYYY-MM-DD (format requis pour un champ de type "date")
+    var formattedDate = today.toISOString().split('T')[0];
+
+    // Mettez à jour la valeur de l'élément input avec la date actuelle
+    document.getElementById('date').value = formattedDate;
+
+    // Mettez à jour la valeur de l'attribut min pour empêcher les dates antérieures
+    document.getElementById('date').setAttribute('min', formattedDate);
+</script>
