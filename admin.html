@@ -46,6 +46,21 @@
 
                 <div class="div_from">
                     <form id="contact-form" class="form_reservation" onsubmit="copyText(); return false;">
+
+                     
+                        <div class="label" style="margin-bottom: 40px;"><span class="label__title">Titre</span>
+                            <div class="form__inputContainer">
+                                <select class="input_adresse input_logo"  id="titre" name="titre">
+                                    <option>DEMANDE DE RÉSERVATION</option>
+                                    <option>BON DE COMMANDE</option>
+                                    <option>DEMANDE DE DEVIS</option>
+                                    <option>FACTURE</option>
+                                    <option value="">vide</option>
+                                </select>
+                            </div>
+                        </div>
+
+
                         <div class="div_lieu">
 
                             <div class="label"><span class="label__title">De</span>
@@ -187,12 +202,14 @@
         var date = dateParts[2] + '-' + dateParts[1] + '-' + dateParts[0]; // Réorganise en format 'DD-MM-YYYY'
 
 
-        var message1 = 'Départ : ' + document.getElementById('departureAddress').value + '\n' +
-            'D\'Arrivée : ' + document.getElementById('arrivalAddress').value + '\n\n' +
-            'Date : ' + date + '\n' +
-            'Heure : ' + document.getElementById('heure').value + '\n\n' +
-            'Passagers : ' + document.getElementById('Nbpassage').value + '\n' +
-            'Bagages : ' + document.getElementById('Nbbagage').value + '\n';
+        var message1 =  document.getElementById('titre').value + '\n\n' +
+            '🟢 Départ : ' + document.getElementById('departureAddress').value + '\n' +
+            '🔵 D\'Arrivée : ' + document.getElementById('arrivalAddress').value + '\n\n' +
+            '📅 Date : ' + date + '\n' +
+            '⏰ Heure : ' + document.getElementById('heure').value + '\n\n' +
+            '👥 Passagers : ' + document.getElementById('Nbpassage').value + '\n' +
+            '🧳 Bagages : ' + document.getElementById('Nbbagage').value + '\n\n'+
+            '📌 Nous aurions besoin de votre nom et prénom, merci !';
 
         // Créer un élément textarea invisible pour copier le texte
         var tempTextArea = document.createElement('textarea');
@@ -305,6 +322,8 @@
 
 
 
+
+
 <!-- date aujourdui et interdir les date du passé -->
 <script>
     // Obtenez la date actuelle
@@ -316,6 +335,5 @@
     // Mettez à jour la valeur de l'élément input avec la date actuelle
     document.getElementById('date').value = formattedDate;
 
-    // Mettez à jour la valeur de l'attribut min pour empêcher les dates antérieures
-    document.getElementById('date').setAttribute('min', formattedDate);
+
 </script>

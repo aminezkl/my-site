@@ -3,6 +3,17 @@
 
 <head>
 
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K7SXSHMQ');</script>
+
+
     <title>VTC Besançon : Réservez un chauffeur </title>
     <link rel="icon" href="images/logo/wheel_8002505.png" type="image/jpeg">
     <meta name="description"
@@ -59,7 +70,14 @@
             <div class="hero__image">
                 <img src="https://images.unsplash.com/photo-1551633166-23c7aed83e48?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="">
-                <h1 class="hero__title">Service de Chauffeur VTC<br> et Taxi à Besançon<br>Réservez maintenant !</h1>
+                <h1 class="hero__title">Service de Chauffeur VTC<br>Réservez maintenant !</h1>
+
+                <h1 class="hero__title">
+                    <a href="tel:+33781180897">
+                        <i class="fa-solid fa-phone fa-xs"></i> 07 81 18 08 97
+                      </a>
+                </h1>
+
 
 
 
@@ -196,18 +214,18 @@
 
                                         "DEMANDE DE RÉSERVATION%0A%0A" +
 
-                                        "De: " + departureAddress + "%0A" +
-                                        "À: " + arrivalAddress + "%0A%0A" +
+                                        "🟢 De: " + departureAddress + "%0A" +
+                                        "🔵 À: " + arrivalAddress + "%0A%0A" +
 
-                                        "Date: " + date + "%0A" +
-                                        "Heure: " + heure + "%0A%0A" +
+                                        "📅 Date: " + date + "%0A" +
+                                        "⏰ Heure: " + heure + "%0A%0A" +
 
-                                        "Passagers: " + Nbpassage + "%0A" +
-                                        "Bagages: " + Nbbagage;
+                                        "👥 Passagers: " + Nbpassage + "%0A" +
+                                        "🧳 Bagages: " + Nbbagage;
 
 
-                                          
-                                        alert("Vous allez être redirigé vers l'application pour envoyer votre demande. Nous confirmerons votre réservation par un appel ou un message de retour.");
+
+                                    alert("Vous allez être redirigé vers l'application pour envoyer votre demande. Nous confirmerons votre réservation par un appel ou un message de retour.");
 
                                     // Redirection en fonction du type de bouton
                                     if (buttonType === 'whatsapp') {
@@ -220,7 +238,7 @@
                                     } else if (buttonType === 'sms') {
                                         window.location.href = "sms:+33781180897?&body=" + message;
                                     }
-                                  
+
                                 }
 
 
@@ -255,7 +273,7 @@
                                 <div class="form__inputContainer">
 
                                     <input class="input_contact input_logo" type="tel" name="phoneNumber"
-                                        id="phoneNumber" placeholder="0604445478" required>
+                                        id="phoneNumber" placeholder="07 81 18 08 97" required>
                                 </div>
                             </div>
 
