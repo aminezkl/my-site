@@ -47,10 +47,10 @@
                 <div class="div_from">
                     <form id="contact-form" class="form_reservation" onsubmit="copyText(); return false;">
 
-                     
+
                         <div class="label" style="margin-bottom: 40px;"><span class="label__title">Titre</span>
                             <div class="form__inputContainer">
-                                <select class="input_adresse input_logo"  id="titre" name="titre">
+                                <select class="input_adresse input_logo" id="titre" name="titre">
                                     <option>DEMANDE DE RÉSERVATION</option>
                                     <option>BON DE COMMANDE</option>
                                     <option>DEMANDE DE DEVIS</option>
@@ -131,13 +131,23 @@
 
 
                                 </div>
-                                <div class="label"><span class="label__title">Bagage</span>
-                                    <input type="number" id="Nbbagage"
-                                        class="input_style input_style_bagage text-center" value="1" placeholder="1"
-                                        max="20" min="0">
-                                </div>
+
                             </div>
 
+                        </div>
+
+                        <div class="label"><span class="label__title">Tarif</span>
+                            <div class="form__inputContainer">
+                                <input class="input_adresse input_logo" type="text" id="tarif" name="arrivalAddress"
+                                    placeholder="Le prix de la course" autocomplete="off" required>
+
+                                <div class="div_select">
+                                    <div id="arrivalSuggestions" class="div_select_wrapper">
+                                    </div>
+                                </div>
+
+
+                            </div>
                         </div>
 
 
@@ -202,14 +212,16 @@
         var date = dateParts[2] + '-' + dateParts[1] + '-' + dateParts[0]; // Réorganise en format 'DD-MM-YYYY'
 
 
-        var message1 =  document.getElementById('titre').value + '\n\n' +
+        var message1 = document.getElementById('titre').value + '\n\n' +
             '🟢 Départ : ' + document.getElementById('departureAddress').value + '\n' +
-            '🔵 D\'Arrivée : ' + document.getElementById('arrivalAddress').value + '\n\n' +
+            '🔵 Arrivée : ' + document.getElementById('arrivalAddress').value + '\n\n' +
             '📅 Date : ' + date + '\n' +
             '⏰ Heure : ' + document.getElementById('heure').value + '\n\n' +
-            '👥 Passagers : ' + document.getElementById('Nbpassage').value + '\n' +
-            '🧳 Bagages : ' + document.getElementById('Nbbagage').value + '\n\n'+
-            '📌 Nous aurions besoin de votre nom et prénom, merci !';
+            '👥 Nombre de passagers : ' + document.getElementById('Nbpassage').value + '\n\n' +
+            '💵 Tarif : ' + document.getElementById('tarif').value + ' €\n\n' +
+
+            '📌 Merci de bien vouloir nous communiquer votre nom et votre prénom pour la réservation.';
+
 
         // Créer un élément textarea invisible pour copier le texte
         var tempTextArea = document.createElement('textarea');
