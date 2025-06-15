@@ -127,8 +127,7 @@
 
 
                                     <input type="text" id="Nbpassage"
-                                        class="input_style input_style_passenger text-center"  placeholder="1-4"
-                                        max="20" min="0">
+                                        class="input_style input_style_passenger text-center" value="1-4">
 
 
                                 </div>
@@ -139,15 +138,20 @@
 
                         <div class="label"><span class="label__title">Tarif</span>
                             <div class="form__inputContainer">
-                                <input class="input_adresse input_logo" type="text" id="tarif" name="arrivalAddress"
-                                    placeholder="Le prix de la course" autocomplete="off" required>
+                                <input class="input_adresse input_logo" type="text" id="tarif" name="tarif"
+                                    placeholder="Le prix de la course" autocomplete="off">
+                            </div>
+                        </div>
+
+                         <div class="label"><span class="label__title">Nom & Prénom</span>
+                            <div class="form__inputContainer">
+                                <input class="input_adresse input_logo" type="text" id="name" name="name"
+                                    placeholder="Nom et prénom du passager" autocomplete="off">
 
                                 <div class="div_select">
                                     <div id="arrivalSuggestions" class="div_select_wrapper">
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
 
@@ -219,9 +223,11 @@
             '📅 Date : ' + date + '\n' +
             '⏰ Heure : ' + document.getElementById('heure').value + '\n\n' +
             '👥 Nombre de passagers : ' + document.getElementById('Nbpassage').value + '\n\n' +
-            '💵 Tarif : ' + document.getElementById('tarif').value + ' €\n\n' +
+           '💵 Tarif : ' + (document.getElementById('tarif').value.trim() !== '' ? document.getElementById('tarif').value + ' €' : 'Non défini') + '\n\n' +
 
-            '📌 Merci de bien vouloir nous communiquer votre nom et votre prénom pour la réservation.';
+            (document.getElementById('name').value.trim() !== ''
+    ? '📌 Nom et prénom : ' + document.getElementById('name').value
+    : '📌 Merci de bien vouloir nous communiquer votre nom et votre prénom pour la réservation.')
 
 
         // Créer un élément textarea invisible pour copier le texte
