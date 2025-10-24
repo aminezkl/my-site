@@ -304,8 +304,12 @@ footer {
 }
 
 .section-logo {
-	padding-top: 60px;
-	padding-bottom: 0px;
+  padding: 60px;
+ 
+  display: flex;
+  flex-direction: column; /* aligne le contenu en colonne (verticalement) */
+  align-items: center;    /* (optionnel) centre horizontalement le contenu */
+  justify-content: center; /* (optionnel) centre verticalement le contenu dans la section */
 }
 
 
